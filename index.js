@@ -41,6 +41,11 @@ function animate(t=0){
     renderer.render(scene , camera)
 }
 animate()
-
+function handleWindowResize(){
+  camera.aspect = window.innerWidth / window.innerHeight
+  camera.updateProjectionMatrix()
+  renderer.setSize(window.innerWidth , window.innerHeight)
+}
+window.addEventListener('resize',handleWindowResize,false)
 renderer.render(scene, camera)
 
